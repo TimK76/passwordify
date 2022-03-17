@@ -10,20 +10,23 @@ SO THAT I can create a strong password that provides greater security
 GIVEN I need a new, secure password
 WHEN I click the button to generate a password
 THEN I am presented with a series of prompts for password criteria
-<!-- A series of window.prompts seems the easiest route though its ugly. I had thought about trying to go the route of toggle switches in a pop up form that would be displayed after pushing the generate button. But this seemed a little advanced for me at the moment and time constraints required I do otherwise. But I really don't like the way this is going to look.-->
+<!-- A series of window.prompts seems the easiest route though its ugly. I had thought about trying to go the route of toggle switches in a pop up form that would be displayed after pushing the generate button. But this seemed a little advanced for me at the moment and time constraints required I do otherwise. But I really don't like the way this is going to look.  So I got to work writing four arrays to hold the possible values. I knew there was a shortcut for this that I hadn't learned how to do yet, but again, in the interest of time and just learning one thing I put that thought on hold for a future project down the road. After writing a series of window.prompts to ask the user whether they wanted to use upper or lower case letters, numbers or special characters, I wrote one last array which I left empty and called useChar (thanks to an ASKBCS assistent (dbueno) for helping me with this). -->
 WHEN prompted for password criteria
 THEN I select which criteria to include in the password
-<!-- -->
+<!-- The usere is now prompted to choose y or n for each of the four character types as soon as the application is deployed. Thanks again to dbueno for reminding me of the toLowerCase option here which allows the user to put in a capital or lower case y or n and it doesn't matter - this saved me having to write a bunch of possible inputs. 
+
+Next up was writing the if statments for each of the first four prompts (upper/lower case, numbers, and special charcters. They are identical in their forms and simply ask if the prompt was answered in the affirmative while ignoring negative answers as unnecessary for now - though there are some potential issues with this. My assitant at ASKBCS also helped me with the concat() method which helped me to merge the selected charcter types into my userChar array. So far all of this data is console logged but not actively applied to the generate password button.-->
 WHEN prompted for the length of the password
 THEN I choose a length of at least 8 characters and no more than 128 characters
-<!-- I think this will require an if else statement. -->
+<!-- Once the user inputs y or n to select or decline the four character types they are asked for a password length between 8 and 128 charcters. This is also done through a window.prompt and the user input is stored in the same userChar array at index 4. 
+
+I think this will require an if else statement. -->
 
 WHEN asked for character types to include in the password
 THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 <!-- I have four arrays set up for these that are populated with all of the possible characters. To be safe, I commented out the special characters. Knowing that some would break the code but not being sure about all of them, I opted to do this for all of them. -->
 WHEN I answer each prompt
 THEN my input should be validated and at least one character type should be selected
-
 <!-- I believe this will require a series of if/else statements as well.-->
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
