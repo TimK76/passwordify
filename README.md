@@ -23,7 +23,7 @@ THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or s
 <!-- I have four arrays set up for these that are populated with all of the possible characters. To be safe, I commented out the special characters. Knowing that some would break the code but not being sure about all of them, I opted to do this for all of them. -->
 WHEN I answer each prompt
 THEN my input should be validated and at least one character type should be selected
-<!-- For this I wrote an if statement that checked if all of the character types were false and, if so, prompted the user to select at least one character type.-->
+<!-- For this I wrote an if statement that checked if all of the character types == false and, if so, prompted the user to select at least one character type..-->
 WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
